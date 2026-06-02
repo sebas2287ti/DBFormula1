@@ -5,11 +5,11 @@ import java.awt.*;
 import java.net.URL;
 
 
-public class Background extends JPanel {
+public class BackgroundImage extends JPanel {
     private Image imageBackground;
 
     //Obtencion de la imagen apartir de la ubicacion en sources
-    public Background(String locationImage) {
+    public BackgroundImage(String locationImage) {
 
         URL urlLocationImage = getClass().getResource(locationImage);
 
