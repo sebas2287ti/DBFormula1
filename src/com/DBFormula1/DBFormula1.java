@@ -1,7 +1,7 @@
 package com.DBFormula1;
 
-
 import com.DBFormula1.infrastructure.ui.components.InterfaceController;
+
 import javax.swing.*;
 
 public class DBFormula1 {
