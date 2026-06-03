@@ -3,7 +3,7 @@ package com.DBFormula1.infrastructure.ui.mainWindow;
 import com.DBFormula1.infrastructure.ui.components.InterfaceController;
 import com.DBFormula1.infrastructure.ui.components.BackgroundVideo;
 import com.DBFormula1.infrastructure.ui.components.UiFactory;
-
+import com.DBFormula1.infrastructure.ui.components.BackgroundImage;
 import java.awt.*;
 import javax.swing.*;
 
@@ -25,12 +25,18 @@ public class TeamsFormula1 extends JPanel  {
         layeredPane.setBounds(0, 0, 1280, 720);
         add(layeredPane);
 
+        //inicializacion de los componentes y definicion del tamaño para el video
         this.backgroundVideo = new BackgroundVideo();
         Component videoComponent = backgroundVideo.getComponenteVisual();
         videoComponent.setBounds(0, 0, 1280, 720);
+
+        //inicializacion del fondo principal y definicion del tamaño
+        BackgroundImage fondoInicial = new BackgroundImage("sources/Image/Fondo/FondoTeams.jpg");
+        fondoInicial.setBounds(0, 0, 1280, 720);
+
         //Definicion de los videos de los equipos
         String mclarenVideo = "sources/Video/VideoTeams/MCLAREN.mp4";
-        String redbullVideo = "";
+        String redbullVideo = "sources/Video/VideoTeams/redbull.mp4";
         String ferrariVideo = "sources/Video/VideoTeams/Ferrari SF-25 REVEALED! First Look at Ferrari’s 2025 F1 Car - Ferrari (720p, h264).mp4";
         String mercedesVideo = "sources/Video/VideoTeams/Before Lights Out, a W11 Light Show \uD83D\uDE0D\uD83D\uDE0D\uD83D\uDE0D - Mercedes-AMG Petronas Formula One Team (720p, h264).mp4";
         String racingbullsVideo = "sources/Video/VideoTeams/VCARB 01 - Entering Our New Era - Visa Cash App RB F1 Team (720p, h264).mp4";
@@ -61,7 +67,10 @@ public class TeamsFormula1 extends JPanel  {
         JButton audiButton = UiFactory.createButtonImage("sources/Image/LogoTeams/AudiLogo.png", 1008, 575, 116, 85, greyF1, greyDarkF1, redSelectionF1, redF1);
         JButton williamsButton = UiFactory.createButtonImage("sources/Image/LogoTeams/WilliamsLogo.png", 1132, 575, 116, 85, greyF1, greyDarkF1, redSelectionF1, redF1);
 
+        JButton returnButton = UiFactory.createButtonImage("sources/Image/Fondo/returnButton.jpg", 20, 20, 45, 45, greyF1, greyDarkF1, redSelectionF1, redF1);
+
         layeredPane.add(videoComponent, JLayeredPane.DEFAULT_LAYER);
+        layeredPane.add(fondoInicial, JLayeredPane.DEFAULT_LAYER);
 
         //Añadir los iconos al panel para que se puedan visualizar
         layeredPane.add(mclarenButton, JLayeredPane.PALETTE_LAYER);
@@ -74,6 +83,7 @@ public class TeamsFormula1 extends JPanel  {
         layeredPane.add(cadillacButton, JLayeredPane.PALETTE_LAYER);
         layeredPane.add(audiButton, JLayeredPane.PALETTE_LAYER);
         layeredPane.add(williamsButton, JLayeredPane.PALETTE_LAYER);
+        layeredPane.add(returnButton, JLayeredPane.PALETTE_LAYER);
 
         //Funciones que ejecuta el video apenas el mouse pasa encima
         mclarenButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -286,38 +296,12 @@ public class TeamsFormula1 extends JPanel  {
         williamsButton.addActionListener(_ -> {
         });
 
-        /*
-        findButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != "sources/Video/VideoTeams/Ferrari SF-25 REVEALED! First Look at Ferrari’s 2025 F1 Car - Ferrari (720p, h264).mp4") {
-                    // Ejecuta el video usando la variable global de la clase
-                    backgroundVideo.startVideo("sources/Video/VideoTeams/Ferrari SF-25 REVEALED! First Look at Ferrari’s 2025 F1 Car - Ferrari (720p, h264).mp4");
-
-                    //
-                    videoActual = "sources/Video/VideoTeams/Ferrari SF-25 REVEALED! First Look at Ferrari’s 2025 F1 Car - Ferrari (720p, h264).mp4";
-
-                    // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
-                    SwingUtilities.invokeLater(() -> {
-                        layeredPane.repaint();
-                    });
-                }
-            }
+        //Funciones que ejecuta cuando le click al boton
+        returnButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            this.CONTROLER.panelChange("StartPanel");
         });
 
-        findButton.addActionListener(_ -> {
-            this.backgroundVideo.startVideo("sources/Video/VideoTeams/Ferrari SF-25 REVEALED! First Look at Ferrari’s 2025 F1 Car - Ferrari (720p, h264).mp4");
-            SwingUtilities.invokeLater(() -> {
-                videoComponent.setVisible(false);
-                videoComponent.setVisible(true);
-            });
-        });
-
-        exitButton.addActionListener(_ -> {
-            backgroundVideo.killResources();
-            System.exit(0);
-        });
-        */
     }
 
 }
