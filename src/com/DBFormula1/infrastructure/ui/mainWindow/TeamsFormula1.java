@@ -299,9 +299,10 @@ public class TeamsFormula1 extends JPanel  {
         //Funciones que ejecuta cuando le click al boton
         returnButton.addActionListener(_ -> {
             this.backgroundVideo.pauseVideo();
+            videoActual = "";
             this.CONTROLER.panelChange("StartPanel");
         });
 
     }
-
 }
+

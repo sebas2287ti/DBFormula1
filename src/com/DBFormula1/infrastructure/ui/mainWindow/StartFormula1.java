@@ -12,6 +12,7 @@ public class StartFormula1 extends JPanel  {
     private final InterfaceController CONTROLER;
     private final BackgroundVideo backgroundVideo;
     private final JLayeredPane layeredPane;
+    private String videoActual = "";
 
     public StartFormula1 (InterfaceController controller) {
         this.CONTROLER = controller;
@@ -57,9 +58,31 @@ public class StartFormula1 extends JPanel  {
 
         //Funciones que ejecuta cuando le click al boton
             startButton.addActionListener(_ -> {
-                this.backgroundVideo.resumeVideo();
+                this.backgroundVideo.pauseVideo();
+                videoActual = "";
                 this.CONTROLER.panelChange("TeamsPanel");
             });
 
+        startButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                if (videoActual != startVideo) {
+                    // Ejecuta el video usando la variable global de la clase
+                    backgroundVideo.startVideo(startVideo);
+                    startButton.setBounds(950, 20, 250, 35);
+
+                    //
+                    videoActual = startVideo;
+
+                    // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
+                    SwingUtilities.invokeLater(() -> {
+                        layeredPane.repaint();
+                    });
+                }
+            }
+        });
+
     }
+
+
 }
