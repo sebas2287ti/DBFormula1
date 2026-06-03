@@ -2,7 +2,6 @@ package com.DBFormula1.infrastructure.ui.components;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 
 
 public class BackgroundImage extends JPanel {
@@ -11,12 +10,7 @@ public class BackgroundImage extends JPanel {
     //Obtencion de la imagen apartir de la ubicacion en sources
     public BackgroundImage(String locationImage) {
 
-        URL urlLocationImage = getClass().getResource(locationImage);
-
-        if (urlLocationImage != null) {
-            this.imageBackground = new ImageIcon(urlLocationImage).getImage();
-        }
-
+        this.imageBackground = new ImageIcon(locationImage).getImage();
         setOpaque(false);
     }
 
