@@ -55,12 +55,14 @@ public class BackgroundVideo {
         mediaPlayerComponent.release();
     }
 
+    //Metodo que pausa el video
     public void pauseVideo() {
         if (mediaPlayerComponent != null && mediaPlayerComponent.mediaPlayer().status().isPlaying()) {
             mediaPlayerComponent.mediaPlayer().controls().pause();
         }
     }
 
+    //metodo que hace continuar el video si estaba pausado
     public void resumeVideo() {
         if (mediaPlayerComponent != null && !mediaPlayerComponent.mediaPlayer().status().isPlaying()) {
             mediaPlayerComponent.mediaPlayer().controls().play();
