@@ -12,7 +12,7 @@ public class TeamsFormula1 extends JPanel  {
     private final InterfaceController CONTROLER;
     private final BackgroundVideo backgroundVideo;
     private final JLayeredPane layeredPane;
-    private String videoActual = "";
+    private String nowVideo = "";
 
     public TeamsFormula1 (InterfaceController controller) {
         this.CONTROLER = controller;
@@ -89,12 +89,12 @@ public class TeamsFormula1 extends JPanel  {
         mclarenButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != mclarenVideo) {
+                if (nowVideo != mclarenVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(mclarenVideo);
 
                     //
-                    videoActual = mclarenVideo;
+                    nowVideo = mclarenVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -105,17 +105,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         mclarenButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         redbullButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != redbullVideo) {
+                if (nowVideo != redbullVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(redbullVideo);
 
                     //
-                    videoActual = redbullVideo;
+                    nowVideo = redbullVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -126,17 +129,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         redbullButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         ferrariButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != ferrariVideo) {
+                if (nowVideo != ferrariVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(ferrariVideo);
 
                     //
-                    videoActual = ferrariVideo;
+                    nowVideo = ferrariVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -147,17 +153,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         ferrariButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         mercedesButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != mercedesVideo) {
+                if (nowVideo != mercedesVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(mercedesVideo);
 
                     //
-                    videoActual = mercedesVideo;
+                    nowVideo = mercedesVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -168,17 +177,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         mercedesButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         racingbullsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != racingbullsVideo) {
+                if (nowVideo != racingbullsVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(racingbullsVideo);
 
                     //
-                    videoActual = racingbullsVideo;
+                    nowVideo = racingbullsVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -189,17 +201,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         racingbullsButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         astonmartinButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != astonmartinVideo) {
+                if (nowVideo != astonmartinVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(astonmartinVideo);
 
                     //
-                    videoActual = astonmartinVideo;
+                    nowVideo = astonmartinVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -210,17 +225,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         astonmartinButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         alpineButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != alpineVideo) {
+                if (nowVideo != alpineVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(alpineVideo);
 
                     //
-                    videoActual = alpineVideo;
+                    nowVideo = alpineVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -231,17 +249,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         alpineButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         cadillacButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != cadillacVideo) {
+                if (nowVideo != cadillacVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(cadillacVideo);
 
                     //
-                    videoActual = cadillacVideo;
+                    nowVideo = cadillacVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -252,17 +273,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         cadillacButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         audiButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != audiVideo) {
+                if (nowVideo != audiVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(audiVideo);
 
                     //
-                    videoActual = audiVideo;
+                    nowVideo = audiVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -273,17 +297,20 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         audiButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         williamsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != williamsVideo) {
+                if (nowVideo != williamsVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(williamsVideo);
 
                     //
-                    videoActual = williamsVideo;
+                    nowVideo = williamsVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
@@ -294,12 +321,15 @@ public class TeamsFormula1 extends JPanel  {
         });
 
         williamsButton.addActionListener(_ -> {
+            this.backgroundVideo.pauseVideo();
+            nowVideo = "";
+            controller.panelChange("FindPanel");
         });
 
         //Funciones que ejecuta cuando le click al boton
         returnButton.addActionListener(_ -> {
             this.backgroundVideo.pauseVideo();
-            videoActual = "";
+            nowVideo = "";
             this.CONTROLER.panelChange("StartPanel");
         });
 
