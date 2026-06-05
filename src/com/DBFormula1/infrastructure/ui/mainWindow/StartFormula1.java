@@ -4,15 +4,15 @@ import com.DBFormula1.infrastructure.ui.components.InterfaceController;
 import com.DBFormula1.infrastructure.ui.components.BackgroundVideo;
 import com.DBFormula1.infrastructure.ui.components.UiFactory;
 import com.DBFormula1.infrastructure.ui.components.BackgroundImage;
+
 import java.awt.*;
 import javax.swing.*;
-
 
 public class StartFormula1 extends JPanel  {
     private final InterfaceController CONTROLER;
     private final BackgroundVideo backgroundVideo;
     private final JLayeredPane layeredPane;
-    private String videoActual = "";
+    private String nowVideo = "";
 
     public StartFormula1 (InterfaceController controller) {
         this.CONTROLER = controller;
@@ -59,20 +59,20 @@ public class StartFormula1 extends JPanel  {
         //Funciones que ejecuta cuando le click al boton
             startButton.addActionListener(_ -> {
                 this.backgroundVideo.pauseVideo();
-                videoActual = "";
+                nowVideo = "";
                 this.CONTROLER.panelChange("TeamsPanel");
             });
 
         startButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                if (videoActual != startVideo) {
+                if (nowVideo != startVideo) {
                     // Ejecuta el video usando la variable global de la clase
                     backgroundVideo.startVideo(startVideo);
                     startButton.setBounds(950, 20, 250, 35);
 
                     //
-                    videoActual = startVideo;
+                    nowVideo = startVideo;
 
                     // Refrescamos el contenedor de capas para que se vea el cambio inmediatamente
                     SwingUtilities.invokeLater(() -> {
