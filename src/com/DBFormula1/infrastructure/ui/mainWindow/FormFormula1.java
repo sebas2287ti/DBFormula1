@@ -91,7 +91,7 @@ public class FormFormula1 extends BackgroundImage {
         String excelURL = "ExcelDB/Reporte_Pilotos_F1.xlsx";
 
         //Creacion del boton encargo de la exportacion de la lista
-        JButton exportButton = UiFactory.createButtonImage("sources/Image/LogoTeams/WilliamsLogo.png", 870, 0, 395, 55, greyF1, greyDarkF1, redSelectionF1, redF1);
+        JButton exportButton = UiFactory.createButtonImage("sources/Image/Base/BotonExportar.png", 870, 0, 395, 55, greyF1, greyDarkF1, redSelectionF1, redF1);
 
 
         //Creacion de la listas de imagenes (Pilotos 1 y 2, Circuitos)

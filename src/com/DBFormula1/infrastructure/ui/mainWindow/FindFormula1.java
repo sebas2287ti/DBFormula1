@@ -31,8 +31,8 @@ public class FindFormula1 extends BackgroundImage {
         // Definicion de colores
         Color greyF1 = new Color(42, 40, 53);
         Color greyDarkF1 = new Color(27, 27, 39);
-        Color redSelectionF1 = new Color(104, 21, 31);
-        Color redF1 = new Color(209, 7, 5);
+        Color redSelectionF1 = new Color(21, 104, 101);
+        Color redF1 = new Color(5, 209, 168);
 
         //Url de donde se guardara los archivos excel
         String excelURL = "ExcelDB/Reporte_Pilotos_F1.xlsx";
@@ -81,7 +81,7 @@ public class FindFormula1 extends BackgroundImage {
         });
 
         //Creacion del boton encargo de la exportacion de la lista
-        JButton exportButton = UiFactory.createButtonImage("sources/Image/LogoTeams/WilliamsLogo.png", 870, 0, 395, 55, greyF1, greyDarkF1, redSelectionF1, redF1);
+        JButton exportButton = UiFactory.createButtonImage("sources/Image/Base/BotonExportar.png", 870, 0, 395, 55, greyF1, greyDarkF1, redSelectionF1, redF1);
 
         //Creacion de la listas de imagenes (Pilotos 1 y 2, Circuitos)
         ArrayList imagePilots1 = new ArrayList<>();
