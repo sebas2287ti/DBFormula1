@@ -33,8 +33,8 @@ Before running the application, ensure you have the following installed and conf
 **Java Development Kit (JDK 17 or higher):** The project relies on modern Java features.
 **Java Swing Library:** Included in the standard JDK for rendering the graphical user interface (GUI).
 **Neon Serverless Postgres Instance:** An active cloud database instance on [Neon.tech](https://neon.tech/).
-**Apache POI Library: Required for handling Excel file generation, data exporting, and report manipulation.
-**Vlcj Library & VLC Media Player: Required to embed and control video playback within the Java Swing interface.
+**Apache POI Library:** Required for handling Excel file generation, data exporting, and report manipulation.
+**vlcj Library & VLC Media Player:** Required to embed and control video playback within the Java Swing interface (requires a local VLC installation).
   
   Note: To use vlcj, you must also have a local installation of the VLC Media Player on your system, matching the architecture of your JDK (e.g., 64-bit).
 
