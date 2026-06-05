@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
-
 import static javax.swing.UIManager.getIcon;
 
 public class UiFactory {
@@ -58,6 +57,7 @@ public class UiFactory {
         button.setFocusPainted(false);
         button.setBorder(BorderFactory.createLineBorder(border, 3));
 
+        //Obtiene la imagen del sources y la escala para ponerla en el icono del boton
         ImageIcon originalIcon = new ImageIcon(URLImage);
         Image imageFix = originalIcon.getImage().getScaledInstance(w, h, Image.SCALE_SMOOTH);
         button.setIcon(new ImageIcon(imageFix));
@@ -295,8 +295,8 @@ public class UiFactory {
         final int[] i = {0};
 
         //Obtencion de las URL de la primera imagen que se mostrara al cargar
-        URL firtUrl = getClass().getResource(URLImage.get(0).toString());
-        ImageIcon fistIconImage = new ImageIcon(firtUrl);
+        String rutaInicia = (String) URLImage.get(0);
+        ImageIcon fistIconImage = new ImageIcon(rutaInicia);
         Image firtImageFix = fistIconImage.getImage().getScaledInstance(w, h, Image.SCALE_SMOOTH);
 
         //Definicion de donde ira el Jpanel contenedor
@@ -316,10 +316,9 @@ public class UiFactory {
 
                 //Obtencion de las URL dentro del timer
                 String URLImages = (String) URLImage.get(i[0]); //no se por que no dejan usar directamente el array sin esto pero ya que
-                URL imagesFinalUrl = getClass().getResource(URLImages);
 
                 //Colocacion de las imagenes y actualizar o repintar todo el Jpanel o contenedor
-                ImageIcon originalIcon = new ImageIcon(imagesFinalUrl);
+                ImageIcon originalIcon = new ImageIcon(URLImages);
                 Image imageFix = originalIcon.getImage().getScaledInstance(w, h, Image.SCALE_SMOOTH);
                 imageLabel.setIcon(new ImageIcon(imageFix));
                 container.repaint();
